@@ -1,6 +1,11 @@
-
 import java.util.List;
 import java.util.stream.Stream;
+
+import business.Services;
+import models.Annonce;
+import models.Domain;
+import models.User;
+import utils.ServicesFactory;
 
 public class Action {
 	private User connectedUser;
@@ -21,7 +26,7 @@ public class Action {
 	}
 
 	public String handleRequest(String request) { 
-		//	System.out.println(isBadRequest(request));
+
 		if(!isBadRequest(request)) {
 
 	 		if("connected".equals(request)) {
@@ -42,17 +47,20 @@ public class Action {
 				return deleteAnnonce(request);
 			}
 			else if(request.startsWith("annonce")) {
-				
-				if(request.contains(":")) {
+				if(request.equals("annonce")) {
+
+					return "request [" + request + "] not found ! you have to add arguments";
+				}
+				else if(request.contains(":")) {
 					return addAnnonce(request);
 				}
 				else {
 					String username = request.split(" ")[1];
-					return consolePrinter.annonces(services.selectAnnoncesByUsername(username), "ID", "D�scription", "Prix", "Type", "E-mail auteur de l'annonce"); 
+					return consolePrinter.annonces(services.selectAnnoncesByUsername(username), "ID", "Déscription", "Prix", "Type", "E-mail auteur de l'annonce"); 
 				}
 			}
 			else if(request.startsWith("myannonce")) {
-				return consolePrinter.annonces(services.selectAnnoncesByUser(this.connectedUser), "ID", "D�scription", "Prix", "Type", "E-mail auteur de l'annonce"); 
+				return consolePrinter.annonces(services.selectAnnoncesByUser(this.connectedUser), "ID", "Déscription", "Prix", "Type", "E-mail auteur de l'annonce"); 
 	 		}
 		}
 		return "request [" + request + "] not found !";
@@ -67,7 +75,8 @@ public class Action {
 				space ++;
 			}
 		}
-		return (space >= 2);
+
+		return (space > 2);
 	}
 
 	private int countSeparator(String request) {
@@ -92,7 +101,7 @@ public class Action {
 			buffer.append("BAD REQUEST");
 		}
 		
-		//System.out.println("handleBadRequest(" + request + ", " + sep + ", " + numberOfSep + ") => " + buffer.toString());
+		System.out.println("handleBadRequest(" + request + ", " + sep + ", " + numberOfSep + ") => " + buffer.toString());
 		return buffer.toString();
 	}
 
@@ -122,9 +131,10 @@ public class Action {
 			}
 			else return "BAD REQUEST : Cette annonce n'existe pas";
 		}
-		return consolePrinter.annonces(services.selectAnnoncesByUser(this.connectedUser), "ID", "D�scription", "Prix", "Type", "E-mail auteur de l'annonce"); 
+		return consolePrinter.annonces(services.selectAnnoncesByUser(this.connectedUser), "ID", "Déscription", "Prix", "Type", "E-mail auteur de l'annonce"); 
  	}
 	private String createUser(String request) {
+
 		String badRequest = handleBadRequest(request, ":", 3);
 		if(!badRequest.equals("PASS")) {
 			
@@ -155,7 +165,7 @@ public class Action {
 		Annonce annonce = new Annonce(new Domain(type), connectedUser, Integer.parseInt(price), description);
  		services.insertAnnonce(annonce);
 
-		return consolePrinter.annonces(services.selectAnnonces(), "D�scription", "Prix", "Type", "E-mail auteur de l'annonce"); 
+		return consolePrinter.annonces(services.selectAnnonces(), "Déscription", "Prix", "Type", "E-mail auteur de l'annonce"); 
 	}
 
 	public String login(String request) {
@@ -173,7 +183,7 @@ public class Action {
 		
 		if(user != null) {
 			connectedUser = user;
-			return annonces(services.selectAnnonces(), "D�scription", "Prix", "Type", "E-mail auteur de l'annonce");
+			return annonces(services.selectAnnonces(), "Déscription", "Prix", "Type", "E-mail auteur de l'annonce");
 		}
 		else return consolePrinter.index();
 	}
