@@ -16,7 +16,7 @@ public class ConsolePrinter {
 		buffer.append("# Voulez vous vous connecter ? la ligne de commande est : connect <username>:<password>");
 		buffer.append(SEPARATOR);
 		buffer.append(
-				"# Voulez vous créer un compte ? la ligne de commande est : create user <username>:<password>:<phone>:<email>");
+				"# Voulez vous crÃ©er un compte ? la ligne de commande est : create user <username>:<password>:<phone>:<email>");
 		buffer.append(SEPARATOR);
 
 		return buffer.toString();

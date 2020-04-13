@@ -44,11 +44,11 @@ public class Action {
 					return addAnnonce(request);
 				} else {
 					String username = request.split(" ")[1];
-					return consolePrinter.annonces(services.selectAnnoncesByUsername(username), "ID", "Déscription",
+					return consolePrinter.annonces(services.selectAnnoncesByUsername(username), "ID", "DÃ©scription",
 							"Prix", "Type", "E-mail auteur de l'annonce");
 				}
 			} else if (request.startsWith("myannonce")) {
-				return consolePrinter.annonces(services.selectAnnoncesByUser(this.connectedUser), "ID", "Déscription",
+				return consolePrinter.annonces(services.selectAnnoncesByUser(this.connectedUser), "ID", "DÃ©scription",
 						"Prix", "Type", "E-mail auteur de l'annonce");
 			}
 		}
@@ -121,7 +121,7 @@ public class Action {
 			} else
 				return "BAD REQUEST : Cette annonce n'existe pas";
 		}
-		return consolePrinter.annonces(services.selectAnnoncesByUser(this.connectedUser), "ID", "Déscription", "Prix",
+		return consolePrinter.annonces(services.selectAnnoncesByUser(this.connectedUser), "ID", "DÃ©scription", "Prix",
 				"Type", "E-mail auteur de l'annonce");
 	}
 
@@ -157,7 +157,7 @@ public class Action {
 		Annonce annonce = new Annonce(new Domain(type), connectedUser, Integer.parseInt(price), description);
 		services.insertAnnonce(annonce);
 
-		return consolePrinter.annonces(services.selectAnnonces(), "Déscription", "Prix", "Type",
+		return consolePrinter.annonces(services.selectAnnonces(), "DÃ©scription", "Prix", "Type",
 				"E-mail auteur de l'annonce");
 	}
 
@@ -176,7 +176,7 @@ public class Action {
 
 		if (user != null) {
 			connectedUser = user;
-			return annonces(services.selectAnnonces(), "Déscription", "Prix", "Type", "E-mail auteur de l'annonce");
+			return annonces(services.selectAnnonces(), "DÃ©scription", "Prix", "Type", "E-mail auteur de l'annonce");
 		} else
 			return consolePrinter.index();
 	}
