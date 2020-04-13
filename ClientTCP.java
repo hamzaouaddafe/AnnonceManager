@@ -12,6 +12,7 @@ public class ClientTCP {
     public static void main(String args[]) {
 
         try {
+            /*
     		// for security we are using SSL
 			System.setProperty("javax.net.ssl.trustStore", "client.jsk");
             System.setProperty("javax.net.ssl.trustStorePassword", "123456");
@@ -20,6 +21,13 @@ public class ClientTCP {
     		SSLSocket socket = (SSLSocket) socketFactory.createSocket("localhost", 1027);
             socket.setEnabledCipherSuites(socketFactory.getDefaultCipherSuites());
             
+            */
+
+			System.setProperty("javax.net.ssl.trustStore", "client.jsk");
+            System.setProperty("javax.net.ssl.trustStorePassword", "123456");
+            SSLSocketFactory socketFactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+            this.socket = (SSLSocket)socketFactory.createSocket("localhost", 1027);
+
     		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintStream printStream = new PrintStream(socket.getOutputStream());
             BufferedReader entryStream = new BufferedReader(new InputStreamReader(System.in));

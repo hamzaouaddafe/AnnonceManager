@@ -43,14 +43,20 @@ public class ServerTCP {
 	public void startServer() {
         
     	try {
+            /*
     		System.setProperty("javax.net.ssl.keyStore", "server.jsk");
     		System.setProperty("javax.net.ssl.keyStorePassword" , "123456");
-    	
-
     		SSLServerSocketFactory serverSocketFactory = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault(); 
     		server = (SSLServerSocket)serverSocketFactory.createServerSocket(1027);
     		server.setEnabledCipherSuites(serverSocketFactory.getDefaultCipherSuites());
-    		
+            */
+            
+            System.setProperty("javax.net.ssl.keyStore", "server.jsk");
+            System.setProperty("javax.net.ssl.keyStorePassword" , "123456");
+		    SSLServerSocketFactory factory = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
+
+			SSLServerSocket server = (SSLServerSocket)factory.createServerSocket(1027);
+
     		// server = new ServerSocket(this.port);
             System.out.println("## Server start listening on port (" + this.port + ")");
             while(true) {
