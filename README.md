@@ -1,5 +1,7 @@
 ===============================================================================
+
 Comment lancer ou compiler * 2 facons pour compiler *
+
 ===============================================================================
 Le lancement du programme peut se faire de 2 façons :
 
@@ -11,8 +13,8 @@ Ouvrir un terminal, se positionner dans le project et exécuter la commande choi
 
 A present le serveur est à l'ecoute, vous devriez normalement recevoir une réponse qui ressmeblerait à  ça : 
 
-## Server start listening on port (1027)
-## Connection (1) established with client from /127.0.0.1 : 52413
+>> Server start listening on port (1027)
+>> Connection (1) established with client from /127.0.0.1 : 52413
 
 -------------------------------------------------------------------------------
 
@@ -36,11 +38,15 @@ vous devriez normalement avoir comme résultat ceci :
 Vous pouvez à present entrer les commandes souhaitées détaillées par la suite.
 
 ######################################
-**Attention:** dans ces 2 cas et après que vous lancez le Serveur, vous lancez notre Client avec les commandes : 
-    >> javac ClientTCP.java
-    >> java ClientTCP
+
+    * **Attention:** dans ces 2 cas et après que vous lancez le Serveur, vous lancez notre Client avec les commandes : 
+        >> javac ClientTCP.java
+        >> java ClientTCP
+    
 ===============================================================================
+
 Prérequis :
+
 ===============================================================================
 Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier .jsk pour le serveur
 , et un fichier .jsk pour le client généré é partir du certificat donné par le serveur (.crt)
@@ -58,7 +64,9 @@ Lancer un Client avec la commande java ClientTCP (avec notre exemple déjà impl
 J'ai déposé mes fichiers .jsk et .crt pour tester sans en générer de nouveaux.
 
 ===============================================================================
+
 Les Commandes pour communiquer avec le serveur :
+
 ===============================================================================
 
 Pour créer un compte => create user <username>:<password>:<phone>:<email> 
