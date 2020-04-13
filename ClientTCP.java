@@ -26,7 +26,7 @@ public class ClientTCP {
 			System.setProperty("javax.net.ssl.trustStore", "client.jsk");
             System.setProperty("javax.net.ssl.trustStorePassword", "123456");
             SSLSocketFactory socketFactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
-            this.socket = (SSLSocket)socketFactory.createSocket("localhost", 1027);
+            SSLSocket socket = (SSLSocket)socketFactory.createSocket("localhost", 1027);
 
     		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintStream printStream = new PrintStream(socket.getOutputStream());
