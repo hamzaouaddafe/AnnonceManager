@@ -1,8 +1,32 @@
 ===============================================================================
 
-Comment lancer ou compiler * 2 facons pour compiler *
+# Comment lancer ou compiler * non sécurisé et sécurisé *
 
 ===============================================================================
+## version non sécurisé :
+concernant la version sans chiffrement, monsieur. Nous avons implémenté un serveur tcp et client tcp sans sécurité, pour tester : 
+
+**il faut lancé le serveur sans passé par _make.**
+
+  ```
+>> javac ServerTCPNotSecure.java
+  >> java ServerTCPNotSecure
+```
+
+puis vous lancez le client : 
+ 
+```
+ >> javac ClientTCPNotSecure.java
+ >> java ClientTCPNotSecure
+```
+
+puis pour éxécuté la commande tcpdump : 
+
+`>>  tcpdump -i lo -v port 1027 -n -X -v -s 1514`
+
+===============================================================================
+## version sécurisé :
+
 Le lancement du programme peut se faire de 2 façons :
 
 Ouvrir un terminal, se positionner dans le project et exécuter la commande choisie suivant la façon choisie.
@@ -45,7 +69,7 @@ Vous pouvez à present entrer les commandes souhaitées détaillées par la suit
     
 ===============================================================================
 
-Prérequis :
+# Prérequis :
 
 ===============================================================================
 Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier .jsk pour le serveur
@@ -65,7 +89,7 @@ J'ai déposé mes fichiers .jsk et .crt pour tester sans en générer de nouveau
 
 ===============================================================================
 
-Les Commandes pour communiquer avec le serveur :
+# Les Commandes pour communiquer avec le serveur :
 
 ===============================================================================
 
