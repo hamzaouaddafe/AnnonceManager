@@ -56,12 +56,12 @@ Maintenant pour lancer le client, on ouvre un autre terminal et on se met dans l
 
 vous devriez normalement avoir comme résultat ceci :
 
-# Voulez vous vous connecter ? la ligne de commande est : connect <username>:<password>
-# Voulez vous créer un compte ? la ligne de commande est : create user <username>:<password>:<phone>:<email>
+```
+>> Voulez vous vous connecter ? la ligne de commande est : connect <username>:<password>
+>> Voulez vous créer un compte ? la ligne de commande est : create user <username>:<password>:<phone>:<email>
+```
 
 Vous pouvez à present entrer les commandes souhaitées détaillées par la suite.
-
-######################################
 
     * **Attention:** dans ces 2 cas et après que vous lancez le Serveur, vous lancez notre Client avec les commandes : 
         >> javac ClientTCP.java
