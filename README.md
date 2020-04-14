@@ -8,13 +8,13 @@ Nous avons ajouté une option `no-encryption` si vous tapez l'option le
 serveur/client lance la version qui utilise le chiffrement, sinon il lance la
 version qui n'utilise pas le chiffrement, ex. :
 
-### version non sécurisé / sans chiffrement
+### Version non sécurisée / sans chiffrement
 
     make
     java ServerTCP no-encryption
     java ClientTCP no-encryption
 
-### version sécurisé / avec chiffrement
+### Version sécurisée / avec chiffrement
 
     make
     java ServerTCP 
@@ -48,7 +48,7 @@ implémenté).
 J'ai déposé mes fichiers `.jsk` et `.crt` pour tester sans en générer de
 nouveaux.
 
-Les Commandes pour communiquer avec le serveur
+Les commandes pour communiquer avec le serveur
 ----------------------------------------------
 
 - Pour créer un compte : `create user <username>:<password>:<phone>:<email>`
