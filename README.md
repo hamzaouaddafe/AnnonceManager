@@ -29,8 +29,6 @@ vous devriez normalement avoir comme résultat ceci :
 Prérequis
 ---------
 
-===============================================================================
-
 Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier .jsk
 pour le serveur, et un fichier .jsk pour le client généré à partir du
 certificat donné par le serveur (.crt).
