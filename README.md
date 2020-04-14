@@ -1,11 +1,14 @@
 Application Client-Serveur _Annonce Manager_
 ============================================
 
-# Comment lancer ou compiler **non sécurisé et sécurisé**
+Compiler et exécuter
+--------------------
 
-===============================================================================
+Nous avons ajouté une option `no-encryption` si vous tapez l'option le
+serveur/client lance la version qui utilise le chiffrement, sinon il lance la
+version qui n'utilise pas le chiffrement, ex. :
 
-Nous avons ajouté une option `no-encryption` si vous tapez l'option le serveur/client lance la version qui utilise le chiffrement, sinon il lance la version qui n'utilise pas le chiffrement, ex. : 
+### version non sécurisé / sans chiffrement
 
 ### Version non sécurisée / sans chiffrement
 
@@ -30,8 +33,9 @@ Prérequis
 
 ===============================================================================
 
-Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier .jsk pour le serveur
-, et un fichier .jsk pour le client généré é partir du certificat donné par le serveur (.crt)
+Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier .jsk
+pour le serveur, et un fichier .jsk pour le client généré à partir du
+certificat donné par le serveur (.crt).
 
 Pour générer le serveur.jsk, le serveur.crt et le client.crt:
 
