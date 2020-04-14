@@ -51,15 +51,15 @@ nouveaux.
 Les Commandes pour communiquer avec le serveur
 ----------------------------------------------
 
-Pour créer un compte : `create user <username>:<password>:<phone>:<email>`
+- Pour créer un compte : `create user <username>:<password>:<phone>:<email>`
 
-    create user hamza:hamza:0615205151:hamza@gmail.com
+      create user hamza:hamza:0615205151:hamza@gmail.com
 
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est
+  La requête est envoyée au serveur, le serveur traite la commande, si elle est
   bonne alors l'utilisateur est ajouté dans la Base de données sinon le serveur
   envoie une erreur au client
 
-Pour se connecter : `connect <username>:<password>`
+- Pour se connecter : `connect <username>:<password>`
 
     connect hamza:hamza
 
