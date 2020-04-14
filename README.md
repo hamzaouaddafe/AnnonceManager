@@ -29,11 +29,12 @@ vous devriez normalement avoir comme résultat ceci :
 Prérequis
 ---------
 
-Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier .jsk
-pour le serveur, et un fichier .jsk pour le client généré à partir du
-certificat donné par le serveur (.crt).
+Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier `.jsk`
+pour le serveur, et un fichier `.jsk` pour le client généré à partir du
+certificat donné par le serveur (`.crt`).
 
 Pour générer le serveur.jsk, le serveur.crt et le client.crt:
+
     keytool -genkey -keystore server.jsk -alias server keyalg RSA 
     keytool -export -keystore server.jsk -alias server -file server.crt 
     keytool -import -alias server -file server.crt -keystore client.jsk
@@ -44,13 +45,16 @@ Lancer un Serveur avec la commande `java ServeurTCP`.
 Lancer un Client avec la commande `java ClientTCP` (avec notre exemple déjà
 implémenté).
 
-J'ai déposé mes fichiers .jsk et .crt pour tester sans en générer de nouveaux.
+J'ai déposé mes fichiers `.jsk` et `.crt` pour tester sans en générer de
+nouveaux.
 
 Les Commandes pour communiquer avec le serveur
 ----------------------------------------------
 
 Pour créer un compte : `create user <username>:<password>:<phone>:<email>`
+
     create user hamza:hamza:0615205151:hamza@gmail.com
+
 + La requête est envoyée au serveur, le serveur traite la commande, si elle est bonne alors l'utilisateur est ajouté dans la Base de données sinon le serveur envoie une erreur au client
 
 Pour se connecter => connect <username>:<password> 
