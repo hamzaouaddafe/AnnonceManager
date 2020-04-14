@@ -1,8 +1,9 @@
 ===============================================================================
 
-# Comment lancer ou compiler * non sécurisé et sécurisé *
+# Comment lancer ou compiler **non sécurisé et sécurisé**
 
 ===============================================================================
+
 Nous avons ajouté une option `no-encryption` si vous tapez l'option le serveur/client lance la version qui utilise le chiffrement, sinon il lance la version qui n'utilise pas le chiffrement, ex. : 
 
 ### version non sécurisé :
@@ -36,6 +37,7 @@ vous devriez normalement avoir comme résultat ceci :
 # Prérequis :
 
 ===============================================================================
+
 Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier .jsk pour le serveur
 , et un fichier .jsk pour le client généré é partir du certificat donné par le serveur (.crt)
 
