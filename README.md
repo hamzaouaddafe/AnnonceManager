@@ -61,37 +61,38 @@ Les Commandes pour communiquer avec le serveur
 
 - Pour se connecter : `connect <username>:<password>`
 
-    connect hamza:hamza
+      connect hamza:hamza
 
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est
+  La requête est envoyée au serveur, le serveur traite la commande, si elle est
   bonne l'utilisateur est connecté à l'application et le serveur envoie la
   liste des annonces au client, sinon il envoie le menu d'authentification au
   client.
 
 
-Pour ajouter une annonce : `annonce <price>:<description>:<domain>`
+- Pour ajouter une annonce : `annonce <price>:<description>:<domain>`
 
-    annonce 50:IphoneX:Téléphone
+      annonce 50:IphoneX:Téléphone
 
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est
-bonne alors l'annonce est ajoutée dans la base données ensuite le serveur
-renvoie la liste des annonces et le menu au client.
+  La requête est envoyée au serveur, le serveur traite la commande, si elle est
+  bonne alors l'annonce est ajoutée dans la base données ensuite le serveur
+  renvoie la liste des annonces et le menu au client.
 
-Pour lister vos annonces : `myannonce`
+- Pour lister vos annonces : `myannonce`
 
-    myannonce
+      myannonce
 
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est
-bonne alors la liste des annonces du client connecté s'affiche.
+  La requête est envoyée au serveur, le serveur traite la commande, si elle est
+  bonne alors la liste des annonces du client connecté s'affiche.
 
-Pour lister toutes les annonces : `annonce`
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est
+- Pour lister toutes les annonces : `annonce`
+
+  La requête est envoyée au serveur, le serveur traite la commande, si elle est
   bonne alors la liste de toutes les annonces est affichée.
 
-Pour supprimer une de vos annonces : `delete <ID-annonce>`
+- Pour supprimer une de vos annonces : `delete <ID-annonce>`
 
-    delete 1
+      delete 1
 
-+ La requête est envoyée au serveur, le serveur traite la commande, si
+  La requête est envoyée au serveur, le serveur traite la commande, si
   l’annonce choisie appartient au client ou existe alors elle va être supprimée
   sinon le serveur va envoyer une erreur.
