@@ -29,11 +29,11 @@ vous devriez normalement avoir comme résultat ceci :
 Prérequis
 ---------
 
-Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier .jsk
-pour le serveur, et un fichier .jsk pour le client généré à partir du
-certificat donné par le serveur (.crt).
+Il faut générer 3 fichiers avant de pouvoir tester ce projet, un fichier `.jsk`
+pour le serveur, et un fichier `.jsk` pour le client généré à partir du
+certificat donné par le serveur (`.crt`).
 
-Pour générer le serveur.jsk, le serveur.crt et le client.crt:
+Pour générer le `serveur.jsk`, le `serveur.crt` et le `client.crt` :
 
     keytool -genkey -keystore server.jsk -alias server keyalg RSA 
     keytool -export -keystore server.jsk -alias server -file server.crt 
