@@ -1,78 +1,76 @@
-
 import java.util.List;
 
 public class ServicesSalesManager implements Services {
 
-	private AnnonceDao annonceDao;
-	private UserDao userDao;
+    private AnnonceDao annonceDao;
+    private UserDao userDao;
 
-	public ServicesSalesManager(AnnonceDao annonceDao, UserDao userDao) {
+    public ServicesSalesManager(AnnonceDao annonceDao, UserDao userDao) {
 
-		this.annonceDao = annonceDao;
-		this.userDao = userDao;
-	}
+        this.annonceDao = annonceDao;
+        this.userDao = userDao;
+    }
 
-	public List<Annonce> selectAnnonces() {
+    public List<Annonce> selectAnnonces() {
 
-		return this.annonceDao.select();
-	}
+        return this.annonceDao.select();
+    }
 
-	public Annonce selectAnnonce(int id) {
+    public Annonce selectAnnonce(int id) {
 
-		return this.annonceDao.select(id);
-	}
+        return this.annonceDao.select(id);
+    }
 
-	public void insertAnnonce(Annonce a) {
+    public void insertAnnonce(Annonce a) {
 
-		this.annonceDao.insert(a);
-	}
+        this.annonceDao.insert(a);
+    }
 
-	public void deleteAnnonce(Annonce a) {
+    public void deleteAnnonce(Annonce a) {
 
-		this.annonceDao.delete(a);
-	}
+        this.annonceDao.delete(a);
+    }
 
-	public void updateAnnonce(Annonce a) {
+    public void updateAnnonce(Annonce a) {
 
-		this.annonceDao.update(a);
-	}
+        this.annonceDao.update(a);
+    }
 
-	public List<User> selectUsers() {
+    public List<User> selectUsers() {
 
-		return this.userDao.select();
-	}
+        return this.userDao.select();
+    }
 
-	public User selectUser(int id) {
+    public User selectUser(int id) {
 
-		return this.userDao.select(id);
-	}
+        return this.userDao.select(id);
+    }
 
-	public User selectUser(String username, String password) {
+    public User selectUser(String username, String password) {
 
-		return this.userDao.select(username, password);
-	}
+        return this.userDao.select(username, password);
+    }
 
-	public void insertUser(User u) {
+    public void insertUser(User u) {
 
-		this.userDao.insert(u);
-	}
+        this.userDao.insert(u);
+    }
 
-	public void deleteUser(User u) {
+    public void deleteUser(User u) {
 
-		this.userDao.delete(u);
-	}
+        this.userDao.delete(u);
+    }
 
-	public void updateUser(User u) {
+    public void updateUser(User u) {
 
-		this.userDao.update(u);
-	}
+        this.userDao.update(u);
+    }
 
-	public List<Annonce> selectAnnoncesByUser(User user) {
-		return this.annonceDao.selectByUser(user);
-	}
+    public List<Annonce> selectAnnoncesByUser(User user) {
+        return this.annonceDao.selectByUser(user);
+    }
 
-	public List<Annonce> selectAnnoncesByUsername(String username) {
-		return this.annonceDao.selectByUser(username);
-	}
-
+    public List<Annonce> selectAnnoncesByUsername(String username) {
+        return this.annonceDao.selectByUser(username);
+    }
 }
