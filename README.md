@@ -4,55 +4,26 @@
 
 ===============================================================================
 ## version non sécurisé :
-concernant la version sans chiffrement, monsieur. Nous avons implémenté un serveur tcp et client tcp sans sécurité, pour tester : 
 
-**il faut lancé le serveur sans passé par _make.**
-
-  ```
->> javac ServerTCPNotSecure.java
-  >> java ServerTCPNotSecure
-```
-
-puis vous lancez le client : 
- 
-```
- >> javac ClientTCPNotSecure.java
- >> java ClientTCPNotSecure
-```
-
-puis pour éxécuté la commande tcpdump : 
-
-`>>  tcpdump -i lo -v port 1027 -n -X -v -s 1514`
-
-===============================================================================
 ## version sécurisé :
 
-Le lancement du programme peut se faire de 2 façons :
+Nous avons ajouté une option `no-encryption` si vous tapez l'option le serveur/client lance la version qui utilise le chiffrement, sinon il lance la version qui n'utilise pas le chiffrement, ex. : 
 
-Ouvrir un terminal, se positionner dans le project et exécuter la commande choisie suivant la façon choisie.
+- **sans chiffrement :**
 
-**1ère façon :** Si vous voulez compiler via le serveur, voici la commande : 
+```
+>> make
+>> java ServerTCP no-encryption
+>> java ClientTCP no-encryption
+```
 
-    >> make
+- **avec chiffrement :** 
 
-A present le serveur est à l'ecoute, vous devriez normalement recevoir une réponse qui ressmeblerait à  ça : 
-
->> Server start listening on port (1027)
->> Connection (1) established with client from /127.0.0.1 : 52413
-
--------------------------------------------------------------------------------
-
-**2ème façon :** Si vous voulez utiliser les commandes java :
-
-    >> javac *.java
-    >> java ServerTCP 
-    
-===============================================================================
-
-Maintenant pour lancer le client, on ouvre un autre terminal et on se met dans le project toujours, puis on écrit les commandes suivantes :
-
-    >> javac ClientTCP.java
-    >> java ClientTCP
+```
+>> make
+>> java ServerTCP 
+>> java ClientTCP
+```
 
 vous devriez normalement avoir comme résultat ceci :
 
@@ -60,12 +31,6 @@ vous devriez normalement avoir comme résultat ceci :
 >> Voulez vous vous connecter ? la ligne de commande est : connect <username>:<password>
 >> Voulez vous créer un compte ? la ligne de commande est : create user <username>:<password>:<phone>:<email>
 ```
-
-Vous pouvez à present entrer les commandes souhaitées détaillées par la suite.
-
-    * **Attention:** dans ces 2 cas et après que vous lancez le Serveur, vous lancez notre Client avec les commandes : 
-        >> javac ClientTCP.java
-        >> java ClientTCP
     
 ===============================================================================
 
