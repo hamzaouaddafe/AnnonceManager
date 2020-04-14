@@ -3,9 +3,7 @@
 # Comment lancer ou compiler * non sécurisé et sécurisé *
 
 ===============================================================================
-## version non sécurisé :
-
-## version sécurisé :
+### version non sécurisé :
 
 Nous avons ajouté une option `no-encryption` si vous tapez l'option le serveur/client lance la version qui utilise le chiffrement, sinon il lance la version qui n'utilise pas le chiffrement, ex. : 
 
@@ -17,6 +15,7 @@ Nous avons ajouté une option `no-encryption` si vous tapez l'option le serveur/
 >> java ClientTCP no-encryption
 ```
 
+### version sécurisé :
 - **avec chiffrement :** 
 
 ```
