@@ -4,11 +4,11 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
-public class ClientTCPNotSecure {
+public class ClientTCPNotSecure extends ClientTCP {
 
-	/* this is client to comminucate with not secured Server */
-	public static void main(String args[]) {
+	public void startClient() {
 
+		System.out.println(">> start running none encrypted tcp client.");
 		try {
 
 			Socket socket = new Socket("localhost", 1027);
@@ -37,4 +37,10 @@ public class ClientTCPNotSecure {
 			System.err.println("Error in Client() : " + e.getMessage());
 		}
 	}
+
+//	/* this is client to comminucate with not secured Server */
+//	public static void main(String args[]) {
+//
+//		new ClientTCPNotSecure().startClient();
+//	}
 }

@@ -2,16 +2,13 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.net.Socket;
-
-import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
 public class ClientTCP {
 
-	public static void main(String args[]) {
-
+	public void startClient() {
+		System.out.println(">> start running encrypted tcp client.");
 		try {
 			/*
 			 * // for security we are using SSL
@@ -53,5 +50,18 @@ public class ClientTCP {
 
 			System.err.println("Error in Client() : " + e.getMessage());
 		}
+	}
+	public static void main(String args[]) {
+
+		if(args.length == 0) {
+
+			new ClientTCP().startClient();
+		}
+		else if(args.length == 1) {
+			if("no-encryption".equals(args[0])) {
+				new ClientTCPNotSecure().startClient();
+			}
+		}
+		else System.out.println("## bad arguments : java ClientTCP <option 'no-encryption'>");
 	}
 }

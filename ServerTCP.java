@@ -41,7 +41,7 @@ public class ServerTCP {
 	}
 
 	public void startServer() {
-
+		System.out.println(">> start running encyrted tcp server.");
 		try {
 			/*
 			 * System.setProperty("javax.net.ssl.keyStore", "server.jsk");
@@ -72,7 +72,16 @@ public class ServerTCP {
 	}
 
 	public static void main(String[] args) throws IOException {
-		ServerTCP serverobj = new ServerTCP(1027);
-		serverobj.startServer();
+		if (args.length == 0) {
+
+			ServerTCP serverobj = new ServerTCP(1027);
+			serverobj.startServer();
+		} else if (args.length == 1) {
+			if ("no-encryption".equals(args[0])) {
+				ServerTCP serverTCP = new ServerTCPNotSecure(1027);
+				serverTCP.startServer();
+			}
+		} else
+			System.out.println("## bad arguments : java ServerTCP <option 'no-encryption'>");
 	}
 }

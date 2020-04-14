@@ -29,6 +29,7 @@ public class ServerTCPNotSecure extends ServerTCP {
 	/* this is not secure version */
 	public void startServer() {
 
+		System.out.println(">> start running none encyrted tcp server.");
 		try {
 
 			server = new ServerSocket(this.port);
@@ -44,8 +45,8 @@ public class ServerTCPNotSecure extends ServerTCP {
 		}
 	}
 
-	public static void main(String[] args) throws IOException {
-		ServerTCPNotSecure serverobj = new ServerTCPNotSecure(1027);
-		serverobj.startServer();
-	}
+//	public static void main(String[] args) throws IOException {
+//		ServerTCPNotSecure serverobj = new ServerTCPNotSecure(1027);
+//		serverobj.startServer();
+//	}
 }
