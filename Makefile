@@ -1,23 +1,17 @@
-JFLAGS = -g
-JC = javac
-JVM= java
-LINT = -Xlint:all
+JC := javac
+JFLAGS := -g -Xlint:all
+JVM := java
 
-.SUFFIXES: .java .class
+FMT := google-java-format
+FMTFLAGS := -i -a
 
-.java.class:
-	$(JC) $(LINT) $*.java
-	$(JVM) $(MAIN)
-	jar -cvf Project.jar ServerTCP.class
+all:
+	$(JC) $(JFLAGS) *.java
 
-CLASSES = \
-	ServerTCP.java
+indent:
+	$(FMT) $(FMTFLAGS) *.java
 
-MAIN = ServerTCP
+clean:
+	$(RM) *.class *~
 
-default: classes
-
-classes: $(CLASSES:.java=.class)
-
-run: $(ServerTCP).class
-	$(JVM) $(MAIN)
+.PHONY: all indent clean
