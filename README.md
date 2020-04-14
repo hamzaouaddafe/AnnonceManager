@@ -55,24 +55,43 @@ Pour créer un compte : `create user <username>:<password>:<phone>:<email>`
 
     create user hamza:hamza:0615205151:hamza@gmail.com
 
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est bonne alors l'utilisateur est ajouté dans la Base de données sinon le serveur envoie une erreur au client
++ La requête est envoyée au serveur, le serveur traite la commande, si elle est
+  bonne alors l'utilisateur est ajouté dans la Base de données sinon le serveur
+  envoie une erreur au client
 
-Pour se connecter => connect <username>:<password> 
->> connect hamza:hamza
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est bonne l'utilisateur est connecté à l'application et le serveur envoie la liste des annonces au client, sinon il envoie le menu d'authentification au client.
------------------------------------------------------------------------------------------------------------------
-Pour ajouter une annonce => annonce <price>:<description>:<domain>
->> annonce 50:IphoneX:Téléphone
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est bonne alors l'annonce est ajoutée dans la base données ensuite le serveur renvoie la liste des annonces et le menu au client.
------------------------------------------------------------------------------------------------------------------
-Pour lister vos annonces => myannonce
->> myannonce
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est bonne alors la liste des annonces du client connecté s'affiche.
------------------------------------------------------------------------------------------------------------------
-Pour lister toutes les annonces => annonce
-+ La requête est envoyée au serveur, le serveur traite la commande, si elle est bonne alors la liste de toutes les annonces est affichée. 
+Pour se connecter : `connect <username>:<password>`
 
------------------------------------------------------------------------------------------------------------------
-Pour supprimer une de vos annonces => delete <ID-annonce>
->> delete 1
-+ La requête est envoyée au serveur, le serveur traite la commande, si l’annonce choisie appartient au client ou existe alors elle va être supprimée sinon le serveur va envoyer une erreur.
+    connect hamza:hamza
+
++ La requête est envoyée au serveur, le serveur traite la commande, si elle est
+  bonne l'utilisateur est connecté à l'application et le serveur envoie la
+  liste des annonces au client, sinon il envoie le menu d'authentification au
+  client.
+
+
+Pour ajouter une annonce : `annonce <price>:<description>:<domain>`
+
+    annonce 50:IphoneX:Téléphone
+
++ La requête est envoyée au serveur, le serveur traite la commande, si elle est
+bonne alors l'annonce est ajoutée dans la base données ensuite le serveur
+renvoie la liste des annonces et le menu au client.
+
+Pour lister vos annonces : `myannonce`
+
+    myannonce
+
++ La requête est envoyée au serveur, le serveur traite la commande, si elle est
+bonne alors la liste des annonces du client connecté s'affiche.
+
+Pour lister toutes les annonces : `annonce`
++ La requête est envoyée au serveur, le serveur traite la commande, si elle est
+  bonne alors la liste de toutes les annonces est affichée.
+
+Pour supprimer une de vos annonces : `delete <ID-annonce>`
+
+    delete 1
+
++ La requête est envoyée au serveur, le serveur traite la commande, si
+  l’annonce choisie appartient au client ou existe alors elle va être supprimée
+  sinon le serveur va envoyer une erreur.
