@@ -8,8 +8,6 @@ Nous avons ajouté une option `no-encryption` si vous tapez l'option le
 serveur/client lance la version qui utilise le chiffrement, sinon il lance la
 version qui n'utilise pas le chiffrement, ex. :
 
-### version non sécurisé / sans chiffrement
-
 ### Version non sécurisée / sans chiffrement
 
     make
